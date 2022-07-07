@@ -50,7 +50,7 @@ class Login extends React.Component {
     const { userName, disableButton, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div>
+      <div data-testid="page-login">
         <label htmlFor="username">
           Login:
           <input
