@@ -14,7 +14,6 @@ class Content extends Component {
       <div className="content">
         <Switch>
           <Route path="/" component={ Login } exact />
-          {/* { loading ? <Redirect to="/search" /> : <Login /> } */}
           <Route path="/search" component={ Search } />
           <Route path="/album/" component={ Album } exact />
           <Route path="/album/:id" component={ Album } />
