@@ -76,8 +76,7 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  history: PropTypes.object.isRequired,
+  history: PropTypes.string.isRequired,
 };
 
 export default Login;
