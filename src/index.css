@@ -17,3 +17,8 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.selected {
+  background-color: green;
+  font-size: 30;
+}
