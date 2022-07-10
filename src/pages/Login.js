@@ -19,7 +19,8 @@ class Login extends React.Component {
     }, this.validateInput);
   };
 
-  buttonCreateUser = async () => {
+  buttonCreateUser = async (e) => {
+    e.preventDefault();
     const { userName } = this.state;
     const { history } = this.props;
     this.setState({
@@ -76,7 +77,9 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.string.isRequired,
-};
+  history: {
+    push: PropTypes.func,
+  },
+}.isRequired;
 
 export default Login;
