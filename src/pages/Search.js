@@ -65,7 +65,6 @@ class Search extends React.Component {
       artistShowResult,
     } = this.state;
     const vazio = '';
-    console.log(artistSearch);
     if (loading) return <Loading />;
     return (
       <div data-testid="page-search">
@@ -107,28 +106,19 @@ class Search extends React.Component {
               ? <h2>Nenhum álbum foi encontrado</h2>
               : (
                 artistResults.map(
-                  ({ artistId,
-                    artistName,
+                  ({ artistName,
                     collectionId,
                     collectionName,
-                    collectionPrice,
                     artworkUrl100,
-                    releaseDate,
-                    trackCount,
                   }, index) => (
                     <Link to={ `/album/${collectionId}` } key={ index }>
                       <div
                         key={ index }
                         data-testid={ `link-to-album-${collectionId}` }
                       >
-                        <h4>{ artistId }</h4>
                         <h4>{ artistName }</h4>
-                        <h4>{ collectionId }</h4>
                         <h4>{ collectionName }</h4>
-                        <h4>{ collectionPrice }</h4>
                         <img src={ artworkUrl100 } alt={ artistName } />
-                        <h4>{ releaseDate }</h4>
-                        <h4>{ trackCount }</h4>
                       </div>
                     </Link>
                   ),

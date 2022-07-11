@@ -25,12 +25,15 @@ class Header extends React.Component {
     const { userName, loading } = this.state;
     return (
       <header data-testid="header-component">
-        Header
+        TrybeTunes //
         { loading ? <Loading />
           : <p data-testid="header-user-name">{ userName.name }</p> }
         <Link data-testid="link-to-gome" to="/">Início</Link>
+        {' '}
         <Link data-testid="link-to-search" to="/search">Pesquisar</Link>
+        {' '}
         <Link data-testid="link-to-favorites" to="/favorites">Favoritas</Link>
+        {' '}
         <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
       </header>
     );
