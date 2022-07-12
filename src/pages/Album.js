@@ -11,7 +11,6 @@ class Album extends React.Component {
       album: [],
       albumInfo: [],
       loading: true,
-      // favoriteSongs: [],
     };
   }
 
@@ -36,52 +35,32 @@ class Album extends React.Component {
     });
   }
 
-  // changeFavoriteSong = () => {
-
-  // }
-
-  // isChecked = () => {
-
-  // }
-
   render() {
     const { album, albumInfo, loading } = this.state;
     if (loading) return <Loading />;
-    console.log(album);
-    console.log(albumInfo);
     return (
       <div data-testid="page-album">
         <section>
-          {
-            // albumInfo.map(({ artistName, collectionName, artWorkUrl100 }, index) => (
-            //   <div key={ index }>
-            //     <p data-testid="artist-name">{ artistName }</p>
-            //     <p data-testid="album-name">{ collectionName }</p>
-            //     <img src={ artWorkUrl100 } alt={ artistName } />
-            //   </div>
-            // )).find(({ artistName, collectionName, artWorkUrl100 }) => (
-            //   <div>
-            //     <p data-testid="artist-name">{ artistName }</p>
-            //     <p data-testid="album-name">{ collectionName }</p>
-            //     <img src={ artWorkUrl100 } alt={ artistName } />
-            //   </div>
-            // ))
-          }
           <div>
             <p data-testid="artist-name">{ albumInfo.artistName }</p>
             <p data-testid="album-name">{ albumInfo.collectionName }</p>
-            <img src={ albumInfo.artWorkUrl100 } alt={ albumInfo.artistName } />
+            <img src={ albumInfo.artworkUrl100 } alt={ albumInfo.artistName } />
           </div>
           {
-            album.map(({ previewUrl, trackId, trackName, trackNumber }, index) => (
+            album.map(({ collectionId,
+              previewUrl,
+              trackId,
+              trackName,
+              trackNumber,
+            }, index) => (
               <div key={ index }>
                 <MusicCard
+                  idAlbum={ collectionId }
                   trackId={ trackId }
                   trackName={ trackName }
                   trackNumber={ trackNumber }
                   previewUrl={ previewUrl }
                   changeFavoriteSong={ this.changeFavoriteSong }
-                  isChecked={ this.isChecked }
                 />
               </div>
             ))
