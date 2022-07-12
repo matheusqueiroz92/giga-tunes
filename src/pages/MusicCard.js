@@ -32,6 +32,7 @@ class MusicCard extends React.Component {
       // favoritesSongs: fav,
       loading: false,
     });
+    console.log(addFavoriteSong);
   };
 
   render() {
