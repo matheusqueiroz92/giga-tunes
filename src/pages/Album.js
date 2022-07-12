@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Loading from './Loading';
 import getMusics from '../services/musicsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   constructor() {
@@ -10,12 +11,19 @@ class Album extends React.Component {
     this.state = {
       album: [],
       albumInfo: [],
+      // favoritesSongs: [],
       loading: true,
     };
   }
 
   componentDidMount() {
     this.requestAlbum();
+    this.getFavoritesFunction();
+  }
+
+  getFavoritesFunction = async () => {
+    const getFavorites = await getFavoriteSongs();
+    console.log(getFavorites);
   }
 
   requestAlbum = async () => {
@@ -55,12 +63,11 @@ class Album extends React.Component {
             }, index) => (
               <div key={ index }>
                 <MusicCard
-                  idAlbum={ collectionId }
+                  idalbum={ collectionId }
                   trackId={ trackId }
                   trackName={ trackName }
                   trackNumber={ trackNumber }
                   previewUrl={ previewUrl }
-                  changeFavoriteSong={ this.changeFavoriteSong }
                 />
               </div>
             ))
