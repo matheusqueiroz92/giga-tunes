@@ -1,0 +1,118 @@
+.containerGeral {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.containerSearch {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 50px;
+} 
+
+.containerSearch label {
+  color: white;
+}
+
+.containerSearch input {
+  background-color: #e4edff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  height: 5vh;
+}
+
+.containerSearch button {
+  background: rgb(44, 158, 152);
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+  text-transform: uppercase;
+  margin-top: 18px;
+  width: 200px;
+  height: 5vh;
+}
+
+.containerSearch button:hover {
+  background-color:  rgb(12, 95, 91);
+}
+
+.containerTitleResults {
+  margin-top: 20px;
+  color: rgb(44, 158, 152);
+  text-align: center;
+}
+
+.containerResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
+  gap: 30px;
+  background-color:  rgb(14, 6, 61);
+  height: auto;
+}
+
+.containerResultCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  flex-direction: column;
+  background-color: rgb(219, 219, 219);
+  height: 400px;
+  border-radius: 10px;
+}
+
+.containerLink {
+  display: flex;
+  justify-content: center;
+  text-decoration-line: none;
+  width: 15vw;
+  border-radius: 10px;
+  background-color: rgb(219, 219, 219);
+}
+
+.containerParagraph {
+  color: rgb(14, 6, 61);
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* .containerParagraph img {
+  width: 30px;
+  height: 30px;
+} */
+
+.containerLink:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.containerResultCard:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.containerBtnPlay {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  gap: 5px;
+  color: rgb(14, 6, 61);;
+}
+
+.containerBtnPlay img {
+  background-color: rgb(255, 255, 255, 0);
+}

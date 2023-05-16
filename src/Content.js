@@ -11,18 +11,16 @@ import Search from './pages/Search';
 class Content extends Component {
   render() {
     return (
-      <div className="content">
-        <Switch>
-          <Route path="/" component={ Login } exact />
-          <Route path="/search" component={ Search } />
-          <Route path="/album/" component={ Album } exact />
-          <Route path="/album/:id" component={ Album } />
-          <Route path="/favorites" component={ Favorites } />
-          <Route path="/profile" component={ Profile } exact />
-          <Route path="/profile/edit" component={ ProfileEdit } />
-          <Route path="*" component={ NotFound } />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/" component={ Login } exact />
+        <Route path="/search" component={ Search } />
+        <Route path="/album/" component={ Album } exact />
+        <Route path="/album/:id" component={ Album } />
+        <Route path="/favorites" component={ Favorites } />
+        <Route path="/profile" component={ Profile } exact />
+        <Route path="/profile/edit" component={ ProfileEdit } />
+        <Route path="*" component={ NotFound } />
+      </Switch>
     );
   }
 }

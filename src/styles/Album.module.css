@@ -1,0 +1,32 @@
+.containerInfoAlbum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 20px;
+  width: 400px;
+}
+
+.containerSection {
+  width: 400px;
+  margin-top: 30px;
+}
+
+.containerInfoAlbum img {
+  height: 150px;
+  width: 150px;
+}
+
+.containerInfoAlbum p {
+  text-align: center;
+}
+
+.containerTrack {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}

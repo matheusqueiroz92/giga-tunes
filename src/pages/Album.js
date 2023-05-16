@@ -4,6 +4,7 @@ import MusicCard from './MusicCard';
 import Loading from './Loading';
 import getMusics from '../services/musicsAPI';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import styleAlbum from '../styles/Album.module.css';
 
 class Album extends React.Component {
   constructor() {
@@ -48,8 +49,8 @@ class Album extends React.Component {
     if (loading) return <Loading />;
     return (
       <div data-testid="page-album">
-        <section>
-          <div>
+        <section className={ styleAlbum.containerSection }>
+          <div className={ styleAlbum.containerInfoAlbum }>
             <p data-testid="artist-name">{ albumInfo.artistName }</p>
             <p data-testid="album-name">{ albumInfo.collectionName }</p>
             <img src={ albumInfo.artworkUrl100 } alt={ albumInfo.artistName } />
@@ -61,7 +62,10 @@ class Album extends React.Component {
               trackName,
               trackNumber,
             }, index) => (
-              <div key={ index }>
+              <div
+                className={ styleAlbum.containerTrack }
+                key={ index }
+              >
                 <MusicCard
                   idalbum={ collectionId }
                   trackId={ trackId }

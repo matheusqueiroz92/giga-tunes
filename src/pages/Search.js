@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import styleSearch from '../styles/Search.module.css';
+import botaoPlay from '../styles/botao-play (1).png';
 
 class Search extends React.Component {
   constructor() {
@@ -67,32 +69,39 @@ class Search extends React.Component {
     const vazio = '';
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-search">
-        <label htmlFor="artist-name">
-          Nome do Artista
-          <input
-            type="text"
-            name="artist-name"
-            id="artist-name"
-            value={ artistSearch }
-            onChange={ this.inputChange }
-            data-testid="search-artist-input"
-          />
-        </label>
-        <button
-          type="submit"
-          data-testid="search-artist-button"
-          disabled={ disableButton }
-          onClick={ this.buttonSearch }
+      <div
+        className={ styleSearch.containerGeral }
+        data-testid="page-search"
+      >
+        <div
+          className={ styleSearch.containerSearch }
         >
-          Pesquisar
-        </button>
-        <div>
+          <label htmlFor="artist-name">
+            Nome do Artista
+            <input
+              type="text"
+              name="artist-name"
+              id="artist-name"
+              value={ artistSearch }
+              onChange={ this.inputChange }
+              data-testid="search-artist-input"
+            />
+          </label>
+          <button
+            type="submit"
+            data-testid="search-artist-button"
+            disabled={ disableButton }
+            onClick={ this.buttonSearch }
+          >
+            Pesquisar
+          </button>
+        </div>
+        <div className={ styleSearch.containerTitleResults }>
           {
             (showResults)
               ? (
                 <h3>
-                  Resultado de álbuns de:
+                  Resultado de álbuns para:
                   {' '}
                   { artistShowResult }
                 </h3>
@@ -100,7 +109,7 @@ class Search extends React.Component {
               : <p>{ vazio }</p>
           }
         </div>
-        <section>
+        <section className={ styleSearch.containerResults }>
           {
             (artistResults.length === 0 && searchBtn)
               ? <h2>Nenhum álbum foi encontrado</h2>
@@ -111,14 +120,40 @@ class Search extends React.Component {
                     collectionName,
                     artworkUrl100,
                   }, index) => (
-                    <Link to={ `/album/${collectionId}` } key={ index }>
+                    <Link
+                      className={ styleSearch.containerLink }
+                      to={ `/album/${collectionId}` }
+                      key={ index }
+                    >
                       <div
+                        className={ styleSearch.containerResultCard }
                         key={ index }
                         data-testid={ `link-to-album-${collectionId}` }
                       >
-                        <h4>{ artistName }</h4>
-                        <h4>{ collectionName }</h4>
-                        <img src={ artworkUrl100 } alt={ artistName } />
+                        <div className={ styleSearch.containerParagraph }>
+                          <p>
+                            {
+                              `${artistName},
+                              ${' '}
+                              ${collectionName}`
+                            }
+                          </p>
+                        </div>
+                        <img
+                          src={ artworkUrl100 }
+                          alt={ artistName }
+                          width="200px"
+                          height="200px"
+                        />
+                        <div className={ styleSearch.containerBtnPlay }>
+                          <img
+                            src={ botaoPlay }
+                            alt="botao-play"
+                            height="50px"
+                            width="50px"
+                          />
+                          <p>Clique e ouça</p>
+                        </div>
                       </div>
                     </Link>
                   ),

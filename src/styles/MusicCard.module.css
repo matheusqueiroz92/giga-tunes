@@ -1,0 +1,19 @@
+.containerGeral {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.containerTrackInfo {
+  color: white;
+}
+
+.containerAudioPlayer {
+  padding: 10px;
+}
+
+.containerFavoriteCheck {
+  color: rgb(44, 158, 152);
+}

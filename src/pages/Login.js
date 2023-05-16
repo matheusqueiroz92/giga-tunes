@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import styleLogin from '../styles/Login.module.css';
 
 class Login extends React.Component {
   constructor() {
@@ -51,26 +52,36 @@ class Login extends React.Component {
     const { userName, disableButton, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-login">
-        <label htmlFor="username">
-          Login:
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value={ userName }
-            onChange={ this.inputChange }
-            data-testid="login-name-input"
-          />
-        </label>
-        <button
-          type="submit"
-          data-testid="login-submit-button"
-          disabled={ disableButton }
-          onClick={ this.buttonCreateUser }
+      <div className={ styleLogin.containerExtern }>
+        <div
+          className={ styleLogin.containerLogin }
+          data-testid="page-login"
         >
-          Entrar
-        </button>
+          <div className={ styleLogin.containerTitleLogin }>
+            <p>LOGIN</p>
+          </div>
+          <div className={ styleLogin.containerInput }>
+            <label htmlFor="username">
+              Usuário:
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={ userName }
+                onChange={ this.inputChange }
+                data-testid="login-name-input"
+              />
+            </label>
+          </div>
+          <button
+            type="submit"
+            data-testid="login-submit-button"
+            disabled={ disableButton }
+            onClick={ this.buttonCreateUser }
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     );
   }
