@@ -156,15 +156,15 @@ Aqui você vai encontrar os detalhes da estrutura e do desenvolvimento do projet
 
   ### Como desenvolver
 
-  Este repositório já contém um template com um App React criado. Após clonar o projeto e instalar as dependências, você deverá completar este template implementando os requisitos listados na seção [Requisitos](#requisitos).
+  Este repositório já contém um template com um App React criado. O template foi implementado de acordo com os requisitos listados na seção [Requisitos](#requisitos).
 
-  No projeto existe um diretório `src/services` que contém os arquivos `favoriteSongsAPI.js`, `searchAlbumsAPI.js`, `userAPI.js` e `musicsAPI.js`. Esses arquivos serão responsáveis por lidar com as requisições à API. Entenda mais sobre eles abaixo:
+  No projeto existe um diretório `src/services` que contém os arquivos `favoriteSongsAPI.js`, `searchAlbumsAPI.js`, `userAPI.js` e `musicsAPI.js`. Esses arquivos serão responsáveis por simular as requisições a uma API. Entenda mais sobre eles abaixo:
 
   <details><summary><strong> <code>userAPI.js</code></strong></summary>
 
   O arquivo `userAPI.js` será utilizado para manipular as informações da pessoa logada, dentro dele estarão as funções para recuperar e atualizar as informações da pessoa usuária, além de criar um novo perfil. Todas essas funções simulam o funcionamento de uma API.
 
-  - Para recuperar as informações da pessoa usuária, utilize a função `getUser`. Ela retornará um objeto com as informações da pessoa logada caso exista.
+  - Para recuperar as informações da pessoa usuária, basta utilizar a função `getUser`. Ela retornará um objeto com as informações da pessoa logada caso exista.
   **Atenção:** caso não encontre nenhuma informação da pessoa usuária, a API retornará um objeto vazio.
 
   - Para criar um novo perfil, utilize a função `createUser`, ela recebe como parâmetro o objeto que contém as informações da pessoa usuária. Esse objeto deverá conter a seguinte estrutura:
@@ -207,9 +207,9 @@ Aqui você vai encontrar os detalhes da estrutura e do desenvolvimento do projet
   </details>
 </details>
 
-## 1. Crie as rotas necessárias para a aplicação
+## 1. Cria as rotas necessárias para a aplicação
 
-Você deve utilizar o `BrowserRouter` pra criar as rotas da sua aplicação e cada rota deverá renderizar um componente específico. Crie cada componente dentro da pasta `src/pages`, conforme o indicado abaixo:
+Deve utilizar o `BrowserRouter` pra criar as rotas da sua aplicação e cada rota deverá renderizar um componente específico. Crie cada componente dentro da pasta `src/pages`, conforme o indicado abaixo:
 
 <details><summary> Rota <code>/</code></summary>
 
@@ -265,10 +265,10 @@ Para qualquer outra rota não mapeada, deve ser renderizado um componente chamad
 
 ---
 
-## 2. Crie um formulário para identificação
+## 2. Cria um formulário para identificação
 <details><summary>Dentro do componente <code>Login</code>, que é renderizado na rota <code>/</code>, crie um formulário para que a pessoa usuária se identifique com um nome:</summary>
 
-- Você deve criar um campo para que a pessoa usuária insira seu nome. Este campo deverá ter o atributo `data-testid="login-name-input"`.
+- Criar um campo para que a pessoa usuária insira seu nome. Este campo deverá ter o atributo `data-testid="login-name-input"`.
 
 - Crie um botão com o texto `Entrar`. Este botão deverá ter o atributo `data-testid="login-submit-button"`.
 
@@ -279,8 +279,6 @@ Para qualquer outra rota não mapeada, deve ser renderizado um componente chamad
 ```javascript
 createUser({ name: "Nome digitado" });
 ```
-
-:bulb: *Obs:* Você verá nos requisitos mais a frente que você poderá passar outras informações para a `createUser`, mas não se preocupe com isso agora. Por enquanto você pode passar somente um objeto com a propriedade `name`.
 
 - Enquanto a informação da pessoa usuária é salva, uma mensagem com o texto `Carregando...` deve aparecer na tela. **:bulb: Dica:** Você precisará dessa mensagem várias vezes no futuro, então é uma boa ideia criar um componente para ela :wink:
 
@@ -339,7 +337,7 @@ createUser({ name: "Nome digitado" });
 
 ---
 
-## 4. Crie os links de navegação no cabeçalho
+## 4. Cria os links de navegação no cabeçalho
 
 <details><summary> Crie o link que redireciona para a página de pesquisa:</summary>
 
@@ -396,7 +394,7 @@ createUser({ name: "Nome digitado" });
 
 ---
 
-## 5. Crie o formulário para pesquisar artistas
+## 5. Cria o formulário para pesquisar artistas
 
 Este formulário deve conter um input e um botão para que seja possível pesquisar os álbums de uma banda ou artista. 
 
@@ -421,7 +419,7 @@ Este formulário deve conter um input e um botão para que seja possível pesqui
 
 ---
 
-## 6. Faça a requisição para pesquisar artistas
+## 6. Fazer a requisição para pesquisar artistas
 
 Com a estrutura da tela de pesquisa criada, agora é hora de fazer uma requisição e receber a lista de álbums da banda ou artista pesquisada.
 
@@ -522,7 +520,7 @@ Para tocar o preview, você deve usar a tag `audio` do próprio HTML. Sua implem
 
 ---
 
-## 8. Crie o mecanismo para adicionar músicas na lista de músicas favoritas
+## 8. Cria o mecanismo para adicionar músicas na lista de músicas favoritas
 
 Você já consegue listar as músicas dos álbuns. Nessa etapa você poderá marcar quais são as músicas que você mais gosta.
 
@@ -553,7 +551,7 @@ Você já consegue listar as músicas dos álbuns. Nessa etapa você poderá mar
 
 ---
 
-## 9. Faça a requisição para recuperar as músicas favoritas ao entrar na página do Álbum
+## 9. Fazer a requisição para recuperar as músicas favoritas ao entrar na página do Álbum
 
 <details><summary> Ao entrar na página com a lista de músicas de um álbum, na rota <code>/album/:id</code>, as músicas que já foram favoritadas anteriormente devem estar com o checkbox marcado</summary>
 
@@ -578,7 +576,7 @@ Você já consegue listar as músicas dos álbuns. Nessa etapa você poderá mar
 
 ---
 
-## 10. Faça a requisição para recuperar as músicas favoritas e atualizar a lista após favoritar uma música
+## 10. Fazer a requisição para recuperar as músicas favoritas e atualizar a lista após favoritar uma música
 
 <details><summary> Após adicionar uma música na lista de favoritas usando a função <code>addSong</code> (Requisito 8), faça uma requisição usando a função <code>getFavoriteSongs</code> para atualizar a lista de músicas favoritas:</summary>
 
@@ -601,7 +599,7 @@ Você já consegue listar as músicas dos álbuns. Nessa etapa você poderá mar
 
 ---
 
-## 11. Crie o mecanismo para remover músicas na lista de músicas favoritas
+## 11. Cria o mecanismo para remover músicas na lista de músicas favoritas
 
 Depois de listar e favoritar as músicas de um álbum, você também deve poder remover uma música da lista de favoritas.
 
